@@ -13,33 +13,33 @@ except Exception as e:
 
 
 
-def authenticate_user():
-    try:
-        # Prompt the user for email and password
-        email = input("Enter your email (must be @bnmit.in): ")
-        password = getpass.getpass("Enter your password: ")
+# def authenticate_user():
+#     try:
+#         # Prompt the user for email and password
+#         email = input("Enter your email (must be @bnmit.in): ")
+#         password = getpass.getpass("Enter your password: ")
 
-        # Check if the email ends with @bnmit.in
-        if not email.endswith("@bnmit.in"):
-            print("Invalid email domain. Please use a valid bnmit.in email.")
-            return False
+#         # Check if the email ends with @bnmit.in
+#         if not email.endswith("@bnmit.in"):
+#             print("Invalid email domain. Please use a valid bnmit.in email.")
+#             return False
 
-        # Connect to the MongoDB database
-        client = MongoClient("mongodb+srv://gudddenuf:welcome123@cluster0.ifxas.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-        db = client['tiger']
-        collection = db['credentials']
+#         # Connect to the MongoDB database
+#         client = MongoClient("mongodb+srv://gudddenuf:welcome123@cluster0.ifxas.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+#         db = client['tiger']
+#         collection = db['credentials']
 
-        # Check if the email exists in the database and if the password matches
-        user = collection.find_one({"email": email})
-        if user and user['password'] == password:
-            print("Authentication successful!")
-            return True
-        else:
-            print("Incorrect email or password. Access denied.")
-            return False
-    except Exception as e:
-        print(f"Error during authentication: {e}")
-        return False
+#         # Check if the email exists in the database and if the password matches
+#         user = collection.find_one({"email": email})
+#         if user and user['password'] == password:
+#             print("Authentication successful!")
+#             return True
+#         else:
+#             print("Incorrect email or password. Access denied.")
+#             return False
+#     except Exception as e:
+#         print(f"Error during authentication: {e}")
+#         return False
 
 
 option_01 = "Website-Vulnerability-Scanner"
@@ -76,20 +76,20 @@ option_05_txt = f"{red}[{white}05{red}]{white} " + option_05.ljust(30)[:30].repl
 
 
 option_11_txt = f"{red}[{white}06{red}]{white} " + option_11.ljust(30)[:30].replace("-", " ")
-option_12_txt = f"{red}[{white}07{red}]{white} " + option_12.ljust(30)[:30].replace("-", " ")
-option_13_txt = f"{red}[{white}08{red}]{white} " + option_13.ljust(30)[:30].replace("-", " ")
-option_14_txt = f"{red}[{white}09{red}]{white} " + option_14.ljust(30)[:30].replace("-", " ")
-option_15_txt = f"{red}[{white}10  {red}]{white} " + option_15.ljust(30)[:30].replace("-", " ")
-option_16_txt = f"{red}[{white}11{red}]{white} " + option_16.ljust(30)[:30].replace("-", " ")
-option_17_txt = f"{red}[{white}12{red}]{white} " + option_17.ljust(30)[:30].replace("-", " ")
+
+option_13_txt = f"{red}[{white}07{red}]{white} " + option_13.ljust(30)[:30].replace("-", " ")
+option_14_txt = f"{red}[{white}08{red}]{white} " + option_14.ljust(30)[:30].replace("-", " ")
+option_15_txt = f"{red}[{white}09{red}]{white} " + option_15.ljust(30)[:30].replace("-", " ")
+option_16_txt = f"{red}[{white}10{red}]{white} " + option_16.ljust(30)[:30].replace("-", " ")
+option_17_txt = f"{red}[{white}11{red}]{white} " + option_17.ljust(30)[:30].replace("-", " ")
 
 
-option_21_txt = f"{red}[{white}13{red}]{white} " + option_21.ljust(30)[:30].replace("-", " ")
-option_22_txt = f"{red}[{white}14{red}]{white} " + option_22.ljust(30)[:30].replace("-", " ")
-option_23_txt = f"{red}[{white}15{red}]{white} " + option_23.ljust(30)[:30].replace("-", " ")
-option_24_txt = f"{red}[{white}16{red}]{white} " + option_24.ljust(30)[:30].replace("-", " ")
-option_25_txt = f"{red}[{white}17{red}]{white} " + option_25.ljust(30)[:30].replace("-", " ")
-option_26_txt = f"{red}[{white}18{red}]{white} " + option_26.ljust(30)[:30].replace("-", " ")
+option_21_txt = f"{red}[{white}12{red}]{white} " + option_21.ljust(30)[:30].replace("-", " ")
+option_22_txt = f"{red}[{white}13{red}]{white} " + option_22.ljust(30)[:30].replace("-", " ")
+option_23_txt = f"{red}[{white}14{red}]{white} " + option_23.ljust(30)[:30].replace("-", " ")
+option_24_txt = f"{red}[{white}15{red}]{white} " + option_24.ljust(30)[:30].replace("-", " ")
+
+option_26_txt = f"{red}[{white}16{red}]{white} " + option_26.ljust(30)[:30].replace("-", " ")
 
 
 menu1 = f"""                                                                                                        ─┐
@@ -97,12 +97,12 @@ menu1 = f"""                                                                    
  └─┬─────────┤ Network Scanner ├─────────┬──────────────┤ Osint ├──────────────┬────────────┤ Utilities ├────────────┴─
    │         └─────────────────┘         │              └───────┘              │            └───────────┘
    ├─ {option_01_txt                    }├─ {option_11_txt                    }├─ {option_21_txt}
-   ├─ {option_02_txt                    }├─ {option_12_txt                    }├─ {option_22_txt}
-   ├─ {option_03_txt                    }├─ {option_13_txt                    }├─ {option_23_txt}
-   ├─ {option_04_txt                    }├─ {option_14_txt                    }├─ {option_24_txt}
-   ├─ {option_05_txt                    }├─ {option_15_txt                    }├─ {option_25_txt}
-   └─                                    ├─ {option_16_txt                    }└─ {option_26_txt}
-                                         └─ {option_17_txt                    }
+   ├─ {option_02_txt                    }├─ {option_13_txt                    }├─ {option_22_txt}
+   ├─ {option_03_txt                    }├─ {option_14_txt                    }├─ {option_23_txt}
+   ├─ {option_04_txt                    }├─ {option_15_txt                    }├─ {option_24_txt}
+   ├─ {option_05_txt                    }├─ {option_16_txt                    }└─ {option_26_txt}
+   └─                                    └─ {option_17_txt                    } 
+                                         
 
 """
 
@@ -125,9 +125,7 @@ def Update():
 menu_path = os.path.join(tool_path, "Program", "Config", "Menu.txt")
 
 def Menu():
-   if not authenticate_user():
-        print("Authentication failed. Exiting program.")
-        exit(1)
+   
    popup_version = Update()
 
    try:
@@ -205,11 +203,11 @@ while True:
       options = {
          '01': option_01, '02': option_02, '03': option_03, '04': option_04,
          '05': option_05, 
-         '06': option_11, '07': option_12,
-         '08': option_13, '09': option_14, '10': option_15, '11': option_16,
-         '12': option_17, 
-         '13': option_21, '14': option_22, '15': option_23, '16': option_24,
-         '17': option_25, '18': option_26,
+         '06': option_11, '07': option_13,
+         '08': option_14, '09': option_15, '10': option_16, '11': option_17,
+         '12': option_21, 
+         '13': option_22, '14': option_23, '15': option_24, '16': option_26,
+         
       }
 
       if choice in options:  
